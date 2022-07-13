@@ -1,0 +1,24 @@
+<?php
+
+use App\Http\Controllers\CalcController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', [HomeController::class, 'hello']);
+
+Route::get('/soma/{num1}/{num2}', [HomeController::class, 'soma']);
+Route::get('/sub/{num1}/{num2}', [HomeController::class, 'sub']);
+
+Route::get('/sum', [CalcController::class, 'showSoma']);
+Route::post('/calc/sum', [CalcController::class, 'calcSoma']);
